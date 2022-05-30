@@ -1,0 +1,7 @@
+INDEX VERSION 1.131+/home/allan/eclipse-workspace/.metadata/.plugins/org.eclipse.jdt.core
+1236223987.index
+3402360422.index
+514065892.index
+36507709.index
+1865797976.index
+2557168029.index

@@ -1,0 +1,31 @@
+package datastructures;
+
+import java.util.ArrayList;
+import java.util.Collection;
+import java.util.List;
+import java.util.Set;
+import java.util.TreeSet;
+
+public class Ordering {
+
+	public static void main(String[] args) {
+		List<String> list = new ArrayList<>();
+		Set<String> set = new TreeSet<>();
+		addElements(list);
+		System.out.println("\n");
+		addElements(set);
+
+	}
+	public static void addElements(Collection<String> addd) {
+		 addd.add("Allan");
+		 addd.add("masha");
+		 addd.add("Jere");
+		 addd.add("mercy");
+		 addd.add("Brayo");
+		 addd.add("ley");
+		 addd.add("Maish");
+		 for(String value : addd) {
+			 System.out.println(value);
+		 }
+	}
+}

@@ -1,0 +1,23 @@
+package recap1;
+
+public class Ostrich extends Bird{
+
+	@Override
+	void fly() {
+		System.out.println("The ostrich canot fly");
+		
+	}
+
+	@Override
+	void feathers() {
+		System.out.println("The ostrich has rough feathers.");
+		
+	}
+
+	@Override
+	void beak() {
+		System.out.println("The ostrich's beak is long. ");
+		
+	}
+
+}

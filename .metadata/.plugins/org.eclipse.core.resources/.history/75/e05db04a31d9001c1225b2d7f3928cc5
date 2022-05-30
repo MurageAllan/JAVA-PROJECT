@@ -1,0 +1,14 @@
+package recap1;
+
+public class App {
+
+	public static void main(String[] args) {
+		Ostrich os = new Ostrich();
+		os.setName("pretty");
+		System.out.println(os.getName());
+		Flamingoe fl = new Flamingoe();
+		fl.run();
+
+	}
+
+}

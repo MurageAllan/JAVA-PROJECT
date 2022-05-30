@@ -1,0 +1,53 @@
+package datastructures;
+
+import java.util.Collection;
+import java.util.HashSet;
+import java.util.LinkedHashSet;
+import java.util.Set;
+import java.util.TreeSet;
+
+public class Sets {
+
+	public static void main(String[] args) {
+		Set<Car> set1 = new HashSet<>();
+		Set<Car> set2 = new LinkedHashSet<>();
+		Set<Car> set3 = new TreeSet<>();
+		setMethod(set1);
+		System.out.println("\n");
+		setMethod(set2);
+		System.out.println("\n");
+		setMethod(set3);
+
+	}
+
+	public static void setMethod(Collection<Car> col) {
+		Car cr1 = new Car("Audi", 20);
+		Car cr2 = new Car("Benz", 10);
+		Car cr3 = new Car("BMW", 15);
+		Car cr4 = new Car("Volkswagen", 20);
+		Car cr5 = new Car("Porshe", 5);
+		col.add(cr1);
+		col.add(cr2);
+		col.add(cr3);
+		col.add(cr4);
+		col.add(cr5);
+		for (Car cars : col) {
+			System.out.println(cars);
+		}
+	}
+
+}
+
+class Car {
+	private int age;
+	private String name;
+
+	public Car(String name, int age) {
+		this.name = name;
+		this.age = age;
+	}
+
+	public String toString() {
+		return String.format("%s  , %d", name, age);
+	}
+}

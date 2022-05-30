@@ -1,0 +1,26 @@
+package file;
+
+import java.io.Serializable;
+
+public class App implements Serializable{
+
+	public static void main(String[] args) {
+		Person person1 = new Person("Allan", 20);
+		Person person2 = new Person("Maich", 21);
+		Person person3 = new Person("Brayo", 22);
+	}
+
+}
+
+class Person {
+	private int age;
+	private String name;
+
+	public Person(String name, int age) {
+		this.name = name;
+		this.age = age;
+	}
+	public String toString() {
+		return String.format("%d, %s", age,name);
+	}
+}

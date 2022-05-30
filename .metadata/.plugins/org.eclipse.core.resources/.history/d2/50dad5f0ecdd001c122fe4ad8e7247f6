@@ -1,0 +1,23 @@
+package datastructures;
+
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.List;
+
+public class SortingLists {
+
+	public static void main(String[] args) {
+		List<String> animals = new ArrayList<>();
+		animals.add("cow");
+		animals.add("goat");
+		animals.add("sheep");
+		animals.add("cat");
+		animals.add("dog");
+		Collections.sort(animals);
+		for(String animal : animals) {
+			System.out.println(animal);
+		}
+
+	}
+
+}

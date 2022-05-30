@@ -1,0 +1,26 @@
+package datastructures;
+
+import java.util.Queue;
+import java.util.concurrent.ArrayBlockingQueue;
+
+public class Queues {
+
+	public static void main(String[] args) {
+		Queue<Integer> Q1 = new ArrayBlockingQueue<>(3); //has a fixed size
+		Q1.add(5);
+		Q1.add(8);
+		Q1.add(7);
+		try {
+			Q1.add(6);
+		}catch(IllegalStateException e) {
+			System.out.println("Tried adding more number of elements than the specified size.");
+		}
+		
+		for(Integer value : Q1) {
+			System.out.println(value);
+		}
+		int value = Q1.remove();
+		System.out.println(value);
+	}
+
+}

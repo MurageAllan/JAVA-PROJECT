@@ -1,0 +1,29 @@
+package recap1;
+
+public class Flamingoe extends Bird implements Information {
+
+	@Override
+	void fly() {
+		System.out.println("The flamingoe can fly fast.");
+		
+	}
+
+	@Override
+	void feathers() {
+		System.out.println("The flamingoe has beautiful feathers. ");
+		
+	}
+
+	@Override
+	void beak() {
+		System.out.println("The flamingoe's beak is medium in size.");
+		
+	}
+
+	@Override
+	public void info() {
+		System.out.println("Generally a flamingoe is mostly found in water.");
+		
+	}
+
+}

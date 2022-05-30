@@ -1,0 +1,47 @@
+package datastructures;
+
+import java.util.HashMap;
+import java.util.LinkedHashMap;
+import java.util.Map;
+import java.util.TreeMap;
+
+public class Maps {
+
+	public static void main(String[] args) {
+		Map<Movie, Integer> map1 = new HashMap<>();
+		Map<Movie, Integer> map2 = new LinkedHashMap<>();
+		Map<Movie, Integer> map3 = new TreeMap<>();
+		Movie mv1 = new Movie("Fauda","Tommy Broson");
+		Movie mv2 = new Movie("Bel Air","Will Smith");
+		Movie mv3 = new Movie("Elite","Cassandra williams");
+		Movie mv4 = new Movie("Top Boy","Bob Robinson");
+		 map1.put(mv1 , 2002);
+		 map1.put(mv2 , 2005);
+		 map1.put(mv3 , 2010);
+		 map1.put(mv4 , 2020);
+		 
+		 for(Movie key : map1.keySet()) {
+			 int value = map1.get(key);
+			 System.out.println(key + " : " + value);
+			 
+		 }
+		 
+		 
+	}
+
+}
+
+class Movie {
+	protected String name;
+	protected String producer;
+
+	public Movie(String name, String producer) {
+		this.name = name;
+		this.producer = producer;
+	}
+	public String toString() {
+		StringBuilder sb = new StringBuilder();
+		sb.append(name).append(" ").append(producer);
+		return sb.toString();
+	}
+}

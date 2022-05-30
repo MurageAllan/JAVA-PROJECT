@@ -1,0 +1,60 @@
+package datastructures;
+
+import java.util.ArrayList;
+import java.util.LinkedList;
+import java.util.List;
+
+public class Lists {
+
+	public static void main(String[] args) {
+		List<Machine> machine1 = new ArrayList<>(); 
+		List<Machine> machine2 = new LinkedList<>(); 
+		machine1.add(new Machine(7, "Nikon"));
+		machine2.add(new Machine(8, "canon"));
+		iterateThrough(machine1);
+		
+
+	}
+		public static void iterateThrough(List<?> machine) {
+			for(Object machinee : machine) {
+				System.out.println(machinee);
+			}
+		}
+
+}
+class Machine{
+	protected int age;
+	protected String name;
+	
+	public Machine(int age, String name) {
+		this.age = age;
+		this.name = name;
+	}
+	public int getAge() {
+		return age;
+	}
+	public void setAge(int age) {
+		this.age = age;
+	}
+	public String getName() {
+		return name;
+	}
+	public void setName(String name) {
+		this.name = name;
+	}
+	public String toString() {
+		return String.format("%d , %s ", age, name);
+	}
+}
+class Car extends Machine{
+
+	public Car(int age, String name) {
+		super(age, name);
+		
+	}
+	public String toString() {
+		return String.format("%d , %s ", age, name);
+	}
+}
+	
+

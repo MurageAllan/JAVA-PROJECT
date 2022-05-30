@@ -1,0 +1,12 @@
+package datastructures;
+
+import java.util.Queue;
+import java.util.concurrent.ArrayBlockingQueue;
+
+public class Queues {
+
+	public static void main(String[] args) {
+		
+	}
+
+}

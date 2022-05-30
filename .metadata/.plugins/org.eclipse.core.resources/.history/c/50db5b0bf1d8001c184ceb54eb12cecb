@@ -1,0 +1,40 @@
+package datastructures;
+
+import java.util.LinkedHashMap;
+import java.util.Map;
+
+public class Maps {
+
+	public static void main(String[] args) {
+		Person p1 = new Person(20, "Allan");
+		Person p2 = new Person(20, "Masha");
+		Person p3 = new Person(21, "Kariuki");
+		Person p4 = new Person(22, "Ian");
+		Person p5 = new Person(23, "Jere");
+		Map<Person, String> map = new LinkedHashMap<>();
+		map.put(p1,"Young");
+		map.put(p2, "Young");
+		map.put(p3, "Old");
+		map.put(p4, "Older");
+		map.put(p5, "Oldest");
+		for(Map.Entry<Person,String> entry : map.entrySet()) {
+			Person key = entry.getKey();
+			String text = entry.getValue();
+			System.out.println(key + " " + text);
+		}
+	}
+
+}
+
+class Person {
+	private int age;
+	private String name;
+
+	public Person(int age, String name) {
+		this.name = name;
+		this.age = age;
+	}
+	public String toString() {
+		return String.format("%d , %s", age,name);
+	}
+}

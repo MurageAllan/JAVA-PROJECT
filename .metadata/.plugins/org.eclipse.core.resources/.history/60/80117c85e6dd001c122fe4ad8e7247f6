@@ -1,0 +1,25 @@
+package datastructures;
+
+import java.util.Collections;
+import java.util.LinkedHashMap;
+import java.util.Map;
+
+public class SortingMaps {
+
+	public static void main(String[] args) {
+		Map<String, Integer> map1 = new LinkedHashMap<>();
+		map1.put("Allan", 2002);
+		map1.put("Kamau", 2003);
+		map1.put("James", 2005);
+		map1.put("Masha", 2000);
+		map1.put("James", 2007);
+		
+		for(Map.Entry<String, Integer> entry : map1.entrySet()) {
+			String key = entry.getKey();
+			int value = entry.getValue();
+			System.out.println(key  + " ," + value );
+		}
+
+	}
+
+}

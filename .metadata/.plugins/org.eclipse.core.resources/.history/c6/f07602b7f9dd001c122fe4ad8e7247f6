@@ -1,0 +1,90 @@
+package datastructures;
+
+import java.util.HashMap;
+import java.util.LinkedHashMap;
+import java.util.Map;
+import java.util.TreeMap;
+
+public class Maps {
+
+	public static void main(String[] args) {
+		Map<Movie, String> map1 = new HashMap<>();
+		Map<Series, String> map2 = new LinkedHashMap<>();
+		Map<Series, String> map3 = new TreeMap<>();
+		movieMethod(map1);
+		System.out.println("\n");
+		seriesMethod(map3);
+	}
+	public static void movieMethod(Map<Movie, String> map) {
+		Movie mv1 = new Movie(2012, "Fauda");
+		Movie mv2 = new Movie(2013, "Stranger Things");
+		Movie mv3 = new Movie(2011, "Everything Everything");
+		Movie mv4 = new Movie(2020, "Ginny and Georgia");
+		Movie mv5 = new Movie(2010, "Knight");
+		Movie mv6 = new Movie(2008, "The hate that you give");
+		map.put(mv1, "Tobby Robson");
+		map.put(mv2, "Diego pablo");
+		map.put(mv3, "Tom Clancys");
+		map.put(mv4, "Jack Ryan");
+		map.put(mv5, "Amandla Stenberg");
+		map.put(mv6, "Chris Rock");
+		for(Movie key : map.keySet()) {
+			String value = map.get(key);
+			System.out.println(key + "," + value);
+		}
+		
+	}
+	public static void seriesMethod(Map<Series,String> map) {
+		Series sr1 = new Series(2010, "Into the badlands");
+		Series sr2 = new Series(2009, "Where hands touch");
+		Series sr3 = new Series(2011, "Prison Break");
+		Series sr4 = new Series (2020, "Elite");
+		Series sr5 = new Series(2019, "Narcos Mexico");
+		map.put(sr1, "Pablo Escobar");
+		map.put(sr2, "Renes Marcos");
+		map.put(sr3, "Peter Mckinley");
+		map.put(sr4, "Sadam Oscar Hussein");
+		map.put(sr5, "Andy Alonso");
+		for(Series key : map.keySet()) {
+			String value = map.get(key);
+			System.out.println(key + ":" + value);
+		}
+		System.out.println("\n");
+		String value = map.get(sr1);
+		System.out.println(value);
+		System.out.println(map.size());
+		map.remove(sr5);
+		for(Series key : map.keySet()) {
+			String value1 = map.get(key);
+			System.out.println(key + ":" + value1);
+		}
+	}
+}
+
+class Movie {
+	private String name;
+	private int date;
+
+	public Movie(int date, String name) {
+
+		this.date = date;
+		this.name = name;
+	}
+	public String toString() {
+		return String.format("%s : %d", name, date);
+	}
+}
+class Series extends Movie implements Comparable<Series>{
+
+	public Series(int date, String name) {
+		super(date, name);
+		
+	}
+
+	@Override
+	public int compareTo(Series o) {
+		
+		return 0;
+	}
+	
+}

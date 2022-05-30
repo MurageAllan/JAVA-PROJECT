@@ -1,0 +1,56 @@
+package datastructures;
+
+import java.util.LinkedHashMap;
+import java.util.Map;
+import java.util.Objects;
+
+public class Maps {
+
+	public static void main(String[] args) {
+		Persona p1 = new Persona(20, "Allan");
+		Persona p2 = new Persona(20, "Allan");
+		Persona p3 = new Persona(21, "Kariuki");
+		Persona p4 = new Persona(22, "Ian");
+		Persona p5 = new Persona(23, "Jere");
+		Map<Persona, String> map = new LinkedHashMap<>();
+		map.put(p1,"Young");
+		map.put(p2, "Young");
+		map.put(p3, "Old");
+		map.put(p4, "Older");
+		map.put(p5, "Oldest");
+		for(Map.Entry<Persona,String> entry : map.entrySet()) {
+			Persona key = entry.getKey();
+			String text = entry.getValue();
+			System.out.println(key + " " + text);
+		}
+	}
+
+}
+
+class Persona {
+	private int age;
+	private String name;
+
+	@Override
+	public int hashCode() {
+		return Objects.hash(age, name);
+	}
+	@Override
+	public boolean equals(Object obj) {
+		if (this == obj)
+			return true;
+		if (obj == null)
+			return false;
+		if (getClass() != obj.getClass())
+			return false;
+		Persona other = (Persona) obj;
+		return age == other.age && Objects.equals(name, other.name);
+	}
+	public Persona(int age, String name) {
+		this.name = name;
+		this.age = age;
+	}
+	public String toString() {
+		return String.format("%d , %s", age,name);
+	}
+}

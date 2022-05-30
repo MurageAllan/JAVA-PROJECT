@@ -1,0 +1,59 @@
+package datastructures;
+
+import java.util.ArrayList;
+import java.util.Collection;
+import java.util.Comparator;
+import java.util.LinkedList;
+import java.util.List;
+
+public class Lists {
+
+	public static void main(String[] args) {
+		List<Camera> cam1 = new ArrayList<>();
+		List<Camera> cam2 = new LinkedList<>();
+		listMethod(cam1);
+		System.out.println("\n");
+		listMethod(cam2);
+	}
+
+	public static void listMethod(Collection<Camera> col) {
+		col.add(new Camera(7, "Nikon"));
+		col.add(new Camera(9, "Canon"));
+		col.add(new Camera(5, "Sony"));
+		col.add(new Camera(3, "Samsung"));
+		for (Camera cam : col) {
+			System.out.println(cam);
+		}
+
+	}
+}
+
+class Camera implements Comparator<Camera> {
+	private String name;
+	private int age;
+
+	public Camera(int age, String name) {
+		this.name = name;
+		this.age = age;
+	}
+
+	public String toString() {
+		StringBuilder sb = new StringBuilder();
+		sb.append(age).append(" , ").append(name);
+		return sb.toString();
+	}
+
+	@Override
+	public int compare(Camera cam1, Camera cam2) {
+		return 0;
+	}
+
+	public String getName() {
+		return name;
+	}
+
+	public void setName(String name) {
+		this.name = name;
+	}
+
+}

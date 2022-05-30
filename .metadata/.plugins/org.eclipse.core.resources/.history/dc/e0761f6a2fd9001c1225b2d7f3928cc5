@@ -1,0 +1,23 @@
+package recap1;
+
+public class Ostrich extends Bird{
+
+	@Override
+	void fly() {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	void feathers() {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	void beak() {
+		// TODO Auto-generated method stub
+		
+	}
+
+}

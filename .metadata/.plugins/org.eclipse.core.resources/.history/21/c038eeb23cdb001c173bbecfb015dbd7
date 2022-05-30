@@ -1,0 +1,31 @@
+package serial;
+
+import java.io.FileInputStream;
+import java.io.FileNotFoundException;
+import java.io.IOException;
+import java.io.ObjectInputStream;
+
+public class Reading {
+
+	public static void main(String[] args) {
+		try(FileInputStream fi = new FileInputStream("Person.bin")){
+			ObjectInputStream os = new ObjectInputStream(fi);
+			Person people = (Person)os.readObject();
+			System.out.println(people);
+			
+			
+			os.close();
+		} catch (FileNotFoundException e) {
+			System.out.println("File was not found.");
+			e.printStackTrace();
+		} catch (IOException e) {
+			System.out.println("File was not readable.");
+			e.printStackTrace();
+		}catch(ClassNotFoundException e) {
+			
+		}
+		
+
+	}
+
+}

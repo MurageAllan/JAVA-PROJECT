@@ -1,0 +1,47 @@
+package recap1;
+
+import java.util.ArrayList;
+import java.util.List;
+
+public class App {
+
+	public static void main(String[] args) {
+		Ostrich os = new Ostrich();
+		os.setName("pretty");
+		System.out.println(os.getName());
+		// Flamingoe fl = new Flamingoe();
+		// fl.run();
+		Information info1 = new Ostrich();
+		info1.info();
+		Information info2 = new Information() {
+
+			@Override
+			public void info() {
+				System.out.println("I am disagreeing with the previous assuption.");
+
+			}
+
+		};
+		info2.info();
+
+		Pigeon.Colour pc = new Pigeon.Colour();
+		pc.complexion();
+		
+		Flamingoe f1 = new Flamingoe(7, "Kamau");
+		Flamingoe f2 = new Flamingoe(8, "Ian");
+		Flamingoe f3 = new Flamingoe(9,"Allan");
+		Flamingoe f4 = new Flamingoe(2,"Masha");
+		Flamingoe f5 = new Flamingoe(8, "Ian");
+		List<Flamingoe> list = new ArrayList<>();
+		list.add(f1);
+		list.add(f2);
+		list.add(f3);
+		list.add(f4);
+		list.add(f5);
+		for(Flamingoe value : list) {
+			System.out.println(value);
+		}
+	}
+	
+
+}

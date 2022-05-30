@@ -1,0 +1,10 @@
+package filerecarp;
+
+public class BufferedWrite {
+
+	public static void main(String[] args) {
+		
+
+	}
+
+}

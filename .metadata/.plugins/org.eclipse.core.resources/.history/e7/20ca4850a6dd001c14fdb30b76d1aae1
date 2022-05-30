@@ -1,0 +1,22 @@
+package datastructures;
+
+import java.util.Queue;
+import java.util.concurrent.ArrayBlockingQueue;
+
+public class Queuess {
+	public static void main(String[] args) {
+		Queue<Integer> Q1 = new ArrayBlockingQueue<>(3);
+		
+		Q1.add(90);
+		Q1.add(40);
+		Q1.add(60);
+		Q1.add(20);
+		try {
+		Q1.add(75);
+		
+		}catch(IllegalStateException e) {
+			System.out.println("Attempted to add many elements against the queue size.");
+		}
+	}
+	
+}

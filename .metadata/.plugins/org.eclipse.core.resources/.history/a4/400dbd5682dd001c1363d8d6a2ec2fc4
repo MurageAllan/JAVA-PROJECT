@@ -1,0 +1,105 @@
+package datastructures;
+
+import java.util.ArrayList;
+import java.util.Collection;
+import java.util.Comparator;
+import java.util.LinkedList;
+import java.util.List;
+import java.util.Objects;
+import java.util.Stack;
+
+public class Lists {
+
+	public static void main(String[] args) {
+		List<Camera> cam1 = new ArrayList<>();
+		List<Camera> cam2 = new LinkedList<>();
+		Collection<SmallCamera> cam4 = new ArrayList<>();
+		Iterable<Camera> cam5 = new LinkedList<>();
+		List<SmallCamera> cam6 = new Stack<>();
+
+		cameraMethod(cam1);
+		System.out.println("\n");
+		cameraMethod(cam2);
+		System.out.println("\n");
+		smallCameraMethod(cam6);
+		System.out.println("\n");
+	}
+
+	public static void cameraMethod(Collection<Camera> col) {
+		Camera cam9 = new Camera(2, "Redmi"); // Testing the equals();
+		Camera cam7 = new Camera(2, "Redmi");
+
+		col.add(new Camera(7, "Nikon"));
+		col.add(new Camera(9, "Canon"));
+		col.add(new Camera(5, "Sony"));
+		col.add(new Camera(3, "Samsung"));
+		for (Camera cam : col) {
+			System.out.println(cam);
+		}
+		col.remove(new Camera(7, "Nikon")); // used to remove an object.
+		System.out.println(cam9.equals(cam7)); // The equals() successfully tested.
+	}
+	
+	public static void smallCameraMethod(Collection<SmallCamera> col) {
+		SmallCamera sc1 = new SmallCamera(1, "OnePlus");
+		SmallCamera sc2 = new SmallCamera(2, "Vivo");
+		SmallCamera sc3 = new SmallCamera(1, "OnePlus");
+		System.out.println(sc1.equals(sc3)); //Test the inheritance of equals();
+	}
+	
+}
+
+class Camera implements Comparator<Camera> {
+	protected String name;
+	protected int age;
+
+	public Camera(int age, String name) {
+		this.name = name;
+		this.age = age;
+	}
+
+	@Override
+	public int hashCode() {
+		return Objects.hash(age, name);
+	}
+
+	@Override
+	public boolean equals(Object obj) {
+		if (this == obj)
+			return true;
+		if (obj == null)
+			return false;
+		if (getClass() != obj.getClass())
+			return false;
+		Camera other = (Camera) obj;
+		return age == other.age && Objects.equals(name, other.name);
+	}
+
+	public String toString() {
+		StringBuilder sb = new StringBuilder();
+		sb.append(age).append(" , ").append(name);
+		return sb.toString();
+	}
+
+	@Override
+	public int compare(Camera cam1, Camera cam2) {
+		return 0;
+	}
+
+	public String getName() {
+		return name;
+	}
+
+	public void setName(String name) {
+		this.name = name;
+	}
+
+}
+class SmallCamera extends Camera{ // Testing inheritance in a list.
+
+	public SmallCamera(int age, String name) {
+		super(age, name);
+		
+	}
+	
+}
